@@ -1,8 +1,8 @@
-Problem 1: In 3-4 sentences, please explain what Big O Notation is.
+## Problem 1: In 3-4 sentences, please explain what Big O Notation is.
 
 Big O notation is
 
-Problem 2: For each of the time complexities shown below:
+## Problem 2: For each of the time complexities shown below:
 
 - Name the complexity
   O(1) constant
@@ -22,12 +22,11 @@ Problem 2: For each of the time complexities shown below:
 - Describe in 1-2 sentences of the complexity
 - Provide a code example of how the complexity works
 
-Problem 3: Name 3 reasons why we care about Big O and we care about code performance.
+## Problem 3: Name 3 reasons why we care about Big O and we care about code performance.
 
-Problem 4: What is the problem of using a time method such as performance.now() to measure how “fast” a
-code runs on our machines.
+## Problem 4: What is the problem of using a time method such as performance.now() to measure how “fast” a code runs on our machines.
 
-Problem 5: Given the following piece of code:
+## Problem 5: Given the following piece of code:
 
 - Explain what the TOTAL time complexity is  
   o For example, if a function had one linear and a nested for...loop, it would be: n + n^2
@@ -35,25 +34,27 @@ Problem 5: Given the following piece of code:
   o For example, if a function had one linear and a nested for...loop, it would condense to: n^2
 
 const someFunction = (arr1) => {
-arr1.push(1).pop()
+arr1.push(1).pop() // Time complexity: O(1) + O(1)
 
-    for (let i = 0; i < arr1.length; i++) {
-        console.log('do something 2')
-    }
-
-    for (let i = 0; i < arr1.length; i++) {
-        console.log('do something 3')
-    }
-
-    for (let i = 0; i < arr1.length; i++) {
-        for (let i = 0; i < arr1.length; i++) {
-            console.log('do something 3')
-        }
-    }
-
+for (let i = 0; i < arr1.length; i++) {
+console.log('do something 2') // Time complexity: O(n)
 }
 
-Problem 6: Given the following piece of code:
+for (let i = 0; i < arr1.length; i++) {
+console.log('do something 3') // Time complexity: O(n)
+}
+
+for (let i = 0; i < arr1.length; i++) {
+for (let i = 0; i < arr1.length; i++) {
+console.log('do something 3') // Time complexity: O(n^2)
+}
+}
+}
+
+Total time complexity: 2 O(1) + 2 O(n) + O(n^2)
+Consolidated time complexity: O(n^2)
+
+## Problem 6: Given the following piece of code:
 
 - Explain what the TOTAL time complexity is  
   o For example, if a function had one linear and a nested for...loop, it would be: n + n^2
@@ -77,68 +78,84 @@ let sum = arr1[1] + arr[2]
 
 }
 
-Problem 7: Please explain in 3-5 sentences why we can ignore constants and consolidate our time complexities.
+## Problem 7: Please explain in 3-5 sentences why we can ignore constants and consolidate our time complexities.
 
-Problem 8: In 2-3 sentences, please explain what space complexity is and why we care.
+When n is large enough, the constants will not matter.
 
-Problem 9: Given the following data TYPES, label what the space complexity is for each one:
+## Problem 8: In 2-3 sentences, please explain what space complexity is and why we care.
 
-- Boolean
-- Undefined
-- Null
-- Numbers
-- String
-- Array
-- Object
+Space complexity is
 
-Problem 10: Give two reasons when you should use a array and when you should use a object.
+## Problem 9: Given the following data TYPES, label what the space complexity is for each one:
 
-Problem 11: Given the following object methods, label what the TIME complexity is for each one:
+- Boolean: Constant
+- Undefined: Constant
+- Null: Constant
+- Numbers: Constant
+- String: Linear
+- Array: Linear
+- Object: Linear
+
+## Problem 10: Give two reasons when you should use a array and when you should use a object.
+
+## Problem 11: Given the following object methods, label what the TIME complexity is for each one:
 
 const obj = {
 name: 'tony'
 }
 //inserting
 obj.age = 44;
+**Answer: O(1)**
 
 //removing  
 delete obj.age;
+**Answer: O(1)**
 
 //searching 1
 obj.hasOwnProperty['name']
+**Answer: O(n)**
 
 //searching 2
 for (const prop in obj) {
 console.log(obj[prop])
 }
+**Answer: O(n)**
 
 //accessing
 obj.age //44
+**Answer: O(1)**
 
 //retrieving keys
 Object.keys(obj)
+**Answer: O(1)**
 
 //retrieving values
 Object.values(obj)
+**Answer: O(1)**
 
-Problem 12: Given the following array methods, label what the TIME complexity is for each one:
+## Problem 12: Given the following array methods, label what the TIME complexity is for each one:
 
 const arr2 = [1, 2, 3, 4, 5, 6, 7];
 
 //inserting 1
 arr2.push(8)
+**Answer: O(1)**
 
 //inserting 2
 arr2.unshift(0)
+**Answer: O(n)**
 
 //removing 1
 arr2.pop()
+**Answer: O(1)**
 
 //removing 2
 arr2.shift()
+**Answer: 0(n)**
 
 //searching 1
 const findNumber = arr2.find(num => num === 2)
+**Answer: O(n)**
 
 //searching 2
 for (let i = 0; i < arr2.length; i++) {
@@ -146,32 +163,39 @@ if (arr2[i] === 2) {
 return arr2[i]
 }
 }
+**Answer: O(n)**
 
 //retrieving  
 const getNumber = arr2[3]
+**Answer: O(1)**
 
 //method 1
 const double = arr2.map(num => num \* 2)
+**Answer: O(n)**
 
 //method 2
 const removeAndAddNewNumber = arr2.splice(1, 1, 5)
+**Answer: O(n)**
 
 //method 3
 const getSum = arr2.reduce((total, num) => total + num, 0)
+**Answer: O(n)**
 
 //method 4
 for (const num of nums) {
 console.log(num \* 2)
 }
+**Answer: O(n)**
 
 //method 5
 const convertToString = arr2.join(' ')
+**Answer: O(n)**
 
 //method 6
 const reversed = arr2.reverse();
+?? **Answer: O(n)**
 
-Problem 13: For each one of these code blocks, please identify the time & space complexity and explanation of
-why it is.
+## Problem 13: For each one of these code blocks, please identify the time & space complexity and explanation of why it is.
 
 Problem 1:  
 function findFirstIndexOfNumber(number, array) {
