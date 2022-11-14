@@ -5,11 +5,13 @@ Big O notation is
 ## Problem 2: For each of the time complexities shown below:
 
 - Name the complexity
-  O(1) constant
-  O(logn) log
-  O(n) linear
-  O(n^2) quadratic
-  O(n!) factorial
+  (Anti-clockwise)
+
+  - O(1) constant
+  - O(logn) log
+  - O(n) linear
+  - O(n^2) quadratic
+  - O(n!) factorial
 
 - Rank from 1-5 (1 being the best, 5 being the worst)
 
@@ -33,6 +35,7 @@ Big O notation is
 - Explain what the CONSOLIDATED time complexity is
   o For example, if a function had one linear and a nested for...loop, it would condense to: n^2
 
+```
 const someFunction = (arr1) => {
 arr1.push(1).pop() // Time complexity: O(1) + O(1)
 
@@ -50,6 +53,7 @@ console.log('do something 3') // Time complexity: O(n^2)
 }
 }
 }
+```
 
 Total time complexity: 2 O(1) + 2 O(n) + O(n^2)
 Consolidated time complexity: O(n^2)
@@ -61,22 +65,22 @@ Consolidated time complexity: O(n^2)
 - Explain what the CONSOLIDATED time complexity is
   o For example, if a function had one linear and a nested for...loop, it would condense to: n^2
 
+```
 const someFunction1 = (arr1) => {
-let sum = arr1[1] + arr[2]
+  let sum = arr1[1] + arr[2]
 
-    while (condition) {
-        sum = arr[5] + arr[7]
-    }
-
+  while (condition) {
+      sum = arr[5] + arr[7]
+   }
+  for (let i = 0; i < arr1.length; i++) {
     for (let i = 0; i < arr1.length; i++) {
-        for (let i = 0; i < arr1.length; i++) {
-            for (let i = 0; i < arr1.length; i++) {
-                console.log('do something 3')
-            }
-        }
+      for (let i = 0; i < arr1.length; i++) {
+        console.log('do something 3')
+      }
     }
-
+  }
 }
+```
 
 ## Problem 7: Please explain in 3-5 sentences why we can ignore constants and consolidate our time complexities.
 
@@ -137,67 +141,77 @@ Object.values(obj)
 
 const arr2 = [1, 2, 3, 4, 5, 6, 7];
 
-//inserting 1
-arr2.push(8)
+//inserting 1  
+arr2.push(8)  
 **Answer: O(1)**
 
-//inserting 2
-arr2.unshift(0)
+//inserting 2  
+arr2.unshift(0)  
 **Answer: O(n)**
 
-//removing 1
-arr2.pop()
+//removing 1  
+arr2.pop()  
 **Answer: O(1)**
 
-//removing 2
-arr2.shift()
+//removing 2  
+arr2.shift()  
 **Answer: 0(n)**
 
-//searching 1
-const findNumber = arr2.find(num => num === 2)
+//searching 1  
+const findNumber = arr2.find(num => num === 2)  
 **Answer: O(n)**
 
 //searching 2
+
+```
 for (let i = 0; i < arr2.length; i++) {
 if (arr2[i] === 2) {
 return arr2[i]
 }
 }
+```
+
 **Answer: O(n)**
 
 //retrieving  
-const getNumber = arr2[3]
+const getNumber = arr2[3]  
 **Answer: O(1)**
 
-//method 1
-const double = arr2.map(num => num \* 2)
+//method 1  
+const double = arr2.map(num => num \* 2)  
 **Answer: O(n)**
 
-//method 2
-const removeAndAddNewNumber = arr2.splice(1, 1, 5)
+//method 2  
+const removeAndAddNewNumber = arr2.splice(1, 1, 5)  
 **Answer: O(n)**
 
-//method 3
-const getSum = arr2.reduce((total, num) => total + num, 0)
+//method 3  
+const getSum = arr2.reduce((total, num) => total + num, 0)  
 **Answer: O(n)**
 
 //method 4
+
+```
 for (const num of nums) {
 console.log(num \* 2)
 }
+```
+
 **Answer: O(n)**
 
-//method 5
-const convertToString = arr2.join(' ')
+//method 5  
+const convertToString = arr2.join(' ')  
 **Answer: O(n)**
 
-//method 6
-const reversed = arr2.reverse();
+//method 6  
+const reversed = arr2.reverse();  
 ?? **Answer: O(n)**
 
 ## Problem 13: For each one of these code blocks, please identify the time & space complexity and explanation of why it is.
 
-Problem 1:  
+Problem 1:
+
+```
 function findFirstIndexOfNumber(number, array) {
 for (let i = 0; i < array.length; i++) {
 if (array[i] === number) {
@@ -206,8 +220,11 @@ return i;
 }
 return -1
 }
+```
 
-Problem 2:  
+Problem 2:
+
+```
 function findEachIndexOfNumber(number,array) {
 let arrayOfIndexes = [];
 array.forEach(function(element, index) {
@@ -217,8 +234,11 @@ arrayOfIndexes.push(index);
 });
 return arrayOfIndexes;
 }
+```
 
-Problem 3:  
+Problem 3:
+
+```
 const array = [36, 14, 1, 7, 21];
 
 function higherOrLower(array) {
@@ -230,8 +250,11 @@ return "Lower";
 return "Neither";
 }
 }
+```
 
-Problem 4:  
+Problem 4:
+
+```
 const array = [1,2,3,4,5,6,7,8];
 
 function determineSumOfSequentialArray(array) {
@@ -241,15 +264,21 @@ sum += array[i];
 }
 return sum;
 }
+```
 
-Problem 5:  
+Problem 5:
+
+```
 const array = [1,2,3,4,5,6,7,8];
 
 function determineSumOfSequentialArray(array) {
 return array.length \* (array.length + 1)/2;
 }
+```
 
-Problem 6:  
+Problem 6:
+
+```
 function searchSortedArray(number, array, beginIndex = 0, endIndex = array.length - 1) {
 let middleIndex = Math.floor((beginIndex + endIndex)/2);
 if (array[middleIndex] === number) {
@@ -264,8 +293,11 @@ endIndex = middleIndex - 1;
 return recursiveBinarySearch(number, array, beginIndex, endIndex);
 }
 }
+```
 
-Problem 7:  
+Problem 7:
+
+```
 const array1 = [3, 7, 9, 12, 15, 18, 32];
 const array2 = [3, 3, 7, 41, 76];
 function compareArrays(array1, array2) {
@@ -279,8 +311,11 @@ arrayOfPairs.push([i, i2]);
 });
 return arrayOfPairs;
 }
+```
 
-Problem 8:  
+Problem 8:
+
+```
 function sortByValue(array){
 function swap(array, index1, index2){
 let temporaryValue = array[index1];
@@ -300,8 +335,11 @@ count++;
 }
 return array;
 }
+```
 
-Problem 9:  
+Problem 9:
+
+```
 function returnDupes(array, array2) {
 let dupeArray = [];
 array.forEach(function(element) {
@@ -311,8 +349,11 @@ dupeArray.push(element);
 });
 return dupeArray;
 }
+```
 
-Problem 10:  
+Problem 10:
+
+```
 function sumFilteredData(array) {
 return array.filter(function(element) {
 return ((element > 5) && (element < 20))
@@ -320,3 +361,4 @@ return ((element > 5) && (element < 20))
 return valueToAdd + currentValue;
 }, 0);
 }
+```
