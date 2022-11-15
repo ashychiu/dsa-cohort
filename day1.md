@@ -32,6 +32,10 @@ Big O notation is
 
 - Explain what the TOTAL time complexity is  
   o For example, if a function had one linear and a nested for...loop, it would be: n + n^2
+
+**Answer:**
+Total time complexity is the total time required to run the algorithm.
+
 - Explain what the CONSOLIDATED time complexity is
   o For example, if a function had one linear and a nested for...loop, it would condense to: n^2
 
@@ -55,6 +59,7 @@ console.log('do something 3') // Time complexity: O(n^2)
 }
 ```
 
+**Answer:**
 Total time complexity: 2 O(1) + 2 O(n) + O(n^2)
 Consolidated time complexity: O(n^2)
 
@@ -67,14 +72,14 @@ Consolidated time complexity: O(n^2)
 
 ```
 const someFunction1 = (arr1) => {
-  let sum = arr1[1] + arr[2]
+  let sum = arr1[1] + arr[2]  // O(1)
 
-  while (condition) {
+  while (condition) {  // O(n)
       sum = arr[5] + arr[7]
    }
-  for (let i = 0; i < arr1.length; i++) {
-    for (let i = 0; i < arr1.length; i++) {
-      for (let i = 0; i < arr1.length; i++) {
+  for (let i = 0; i < arr1.length; i++) {     // O(n)
+    for (let i = 0; i < arr1.length; i++) {     // O(n)
+      for (let i = 0; i < arr1.length; i++) {     // O(n)
         console.log('do something 3')
       }
     }
@@ -82,9 +87,13 @@ const someFunction1 = (arr1) => {
 }
 ```
 
+**Answer:**
+Total time complexity: O(1) + O(n) + O(n^3)
+Consolidated time complexity: O(n^3)
+
 ## Problem 7: Please explain in 3-5 sentences why we can ignore constants and consolidate our time complexities.
 
-When n is large enough, the constants will not matter.
+When the argument is large enough or tends towards a particular value or infinity, the impact of constants will be insignifiant.
 
 ## Problem 8: In 2-3 sentences, please explain what space complexity is and why we care.
 
@@ -209,11 +218,11 @@ const reversed = arr2.reverse();
 
 ## Problem 13: For each one of these code blocks, please identify the time & space complexity and explanation of why it is.
 
-Problem 1:
+\*_Problem 1:_
 
 ```
 function findFirstIndexOfNumber(number, array) {
-for (let i = 0; i < array.length; i++) {
+for (let i = 0; i < array.length; i++) {    // O(n)
 if (array[i] === number) {
 return i;
 }
@@ -222,12 +231,16 @@ return -1
 }
 ```
 
-Problem 2:
+**Answer:**
+Time complexity: O(n)
+Space complexity: Constant (no extra space needed)
+
+\*_Problem 2:_
 
 ```
 function findEachIndexOfNumber(number,array) {
-let arrayOfIndexes = [];
-array.forEach(function(element, index) {
+let arrayOfIndexes = [];   // Linear space
+array.forEach(function(element, index) {  // O(n)
 if (element === number) {
 arrayOfIndexes.push(index);
 }
@@ -236,23 +249,31 @@ return arrayOfIndexes;
 }
 ```
 
-Problem 3:
+**Answer:**
+Time complexity: O(n)
+Space complexity: Linear (a new array is return)
+
+\*_Problem 3:_
 
 ```
 const array = [36, 14, 1, 7, 21];
 
 function higherOrLower(array) {
-if (array[array.length -1 ] > array[0]) {
+if (array[array.length -1 ] > array[0]) {  // n(1)
 return "Higher";
-else if (array[array.length -1 ] < array[0]) {
+else if (array[array.length -1 ] < array[0]) {  // n(1)
 return "Lower";
 } else {
-return "Neither";
+return "Neither";   // n(1)
 }
 }
 ```
 
-Problem 4:
+**Answer:**
+Time complexity: O(1)
+Space complexity: Linear (a string is returned)
+
+\*_Problem 4:_
 
 ```
 const array = [1,2,3,4,5,6,7,8];
@@ -266,7 +287,11 @@ return sum;
 }
 ```
 
-Problem 5:
+**Answer:**
+Time complexity: O(1)
+Space complexity: Linear (a string is returned)
+
+\*_Problem 5:_
 
 ```
 const array = [1,2,3,4,5,6,7,8];
@@ -276,36 +301,44 @@ return array.length \* (array.length + 1)/2;
 }
 ```
 
-Problem 6:
+**Answer:**
+Time complexity: O(1)
+Space complexity: Constant (a number is returned)
+
+\*_Problem 6:_
 
 ```
 function searchSortedArray(number, array, beginIndex = 0, endIndex = array.length - 1) {
-let middleIndex = Math.floor((beginIndex + endIndex)/2);
-if (array[middleIndex] === number) {
+let middleIndex = Math.floor((beginIndex + endIndex)/2);  // Constant space
+if (array[middleIndex] === number) {  // O(1)
 return middleIndex;
-} else if (beginIndex >= endIndex) {
+} else if (beginIndex >= endIndex) {  // O(1)
 return -1;
-} else if (array[middleIndex] < number) {
+} else if (array[middleIndex] < number) {  //O(1)
 beginIndex = middleIndex + 1;
-return recursiveBinarySearch(number, array, beginIndex, endIndex);
+return recursiveBinarySearch(number, array, beginIndex, endIndex); // O(log n)
 } else if (array[middleIndex] > number) {
 endIndex = middleIndex - 1;
-return recursiveBinarySearch(number, array, beginIndex, endIndex);
+return recursiveBinarySearch(number, array, beginIndex, endIndex);  //O(log n)
 }
 }
 ```
 
-Problem 7:
+**Answer:**
+Time complexity: O(log n)
+Space complexity: Constant (a number is returned)
+
+\*_Problem 7:_
 
 ```
 const array1 = [3, 7, 9, 12, 15, 18, 32];
 const array2 = [3, 3, 7, 41, 76];
 function compareArrays(array1, array2) {
-let arrayOfPairs = [];
-array1.forEach(function(e, i) {
-array2.forEach(function(e2, i2) {
+let arrayOfPairs = [];  // Linear space
+array1.forEach(function(e, i) {   // O(n)
+array2.forEach(function(e2, i2) {  // O(n)
 if (e === e2) {
-arrayOfPairs.push([i, i2]);
+arrayOfPairs.push([i, i2]);   // O(1)
 }
 });
 });
@@ -313,19 +346,23 @@ return arrayOfPairs;
 }
 ```
 
-Problem 8:
+**Answer:**
+Time complexity: O(n)
+Space complexity: Linear (an array is returned)
+
+\*_Problem 8:_
 
 ```
 function sortByValue(array){
 function swap(array, index1, index2){
-let temporaryValue = array[index1];
+let temporaryValue = array[index1];  // Constant space
 array[index1] = array[index2];
 array[index2] = temporaryValue;
 }
-let count = 1;
-while (count < array.length) {
-let swapCount = 0;
-for (let i=0; i<array.length-count; i++) {
+let count = 1;    // Constant space
+while (count < array.length) {    // O(n)
+let swapCount = 0;    // Constant space
+for (let i=0; i<array.length-count; i++) {      //O(n)
 if (array[i] > array[i+1]) {
 swap(array, i, i+1);
 swapCount++;
@@ -337,28 +374,40 @@ return array;
 }
 ```
 
-Problem 9:
+**Answer:**
+Time complexity: O(n)
+Space complexity: Constant (a number / original array is returned)
+
+\*_Problem 9:_
 
 ```
 function returnDupes(array, array2) {
-let dupeArray = [];
-array.forEach(function(element) {
-if (array2.includes(element)) {
-dupeArray.push(element);
+let dupeArray = [];  // Linear space
+array.forEach(function(element) {     //O(n)
+if (array2.includes(element)) {   //O(n)
+dupeArray.push(element);    // O(1)
 }
 });
 return dupeArray;
 }
 ```
 
-Problem 10:
+**Answer:**
+Time complexity: O(n^2)
+Space complexity: Linear (a new array is returned)
+
+\*_Problem 10:_
 
 ```
 function sumFilteredData(array) {
-return array.filter(function(element) {
-return ((element > 5) && (element < 20))
+return array.filter(function(element) {     // O(n), Linear space
+return ((element > 5) && (element < 20))      // O(n), Constant space
 }).reduce(function(valueToAdd, currentValue) {
-return valueToAdd + currentValue;
+return valueToAdd + currentValue;  // Constant space
 }, 0);
 }
 ```
+
+**Answer:**
+Time complexity: O(n)
+Space complexity: Linear (.filter returns a new array)
