@@ -75,7 +75,7 @@ const someFunction1 = (arr1) => {
   let sum = arr1[1] + arr[2]  // O(1)
 
   while (condition) {  // O(n)
-      sum = arr[5] + arr[7]
+      sum = arr[5] + arr[7]  //O(1)
    }
   for (let i = 0; i < arr1.length; i++) {     // O(n)
     for (let i = 0; i < arr1.length; i++) {     // O(n)
@@ -88,7 +88,7 @@ const someFunction1 = (arr1) => {
 ```
 
 **Answer:**
-Total time complexity: O(1) + O(n) + O(n^3)
+Total time complexity: 2 O(1) + O(n) + O(n^3)
 Consolidated time complexity: O(n^3)
 
 ## Problem 7: Please explain in 3-5 sentences why we can ignore constants and consolidate our time complexities.
@@ -110,6 +110,8 @@ Space complexity is
 - Object: Linear
 
 ## Problem 10: Give two reasons when you should use a array and when you should use a object.
+
+**Answer:**
 
 ## Problem 11: Given the following object methods, label what the TIME complexity is for each one:
 
@@ -241,8 +243,8 @@ Space complexity: Constant (no extra space needed)
 function findEachIndexOfNumber(number,array) {
 let arrayOfIndexes = [];   // Linear space
 array.forEach(function(element, index) {  // O(n)
-if (element === number) {
-arrayOfIndexes.push(index);
+if (element === number) { // O(1)
+arrayOfIndexes.push(index); // O(1)
 }
 });
 return arrayOfIndexes;
@@ -250,7 +252,7 @@ return arrayOfIndexes;
 ```
 
 **Answer:**
-Time complexity: O(n)
+Time complexity: O(1) + O(1) + O(n) = O(n)
 Space complexity: Linear (a new array is return)
 
 \*_Problem 3:_
@@ -279,17 +281,17 @@ Space complexity: Linear (a string is returned)
 const array = [1,2,3,4,5,6,7,8];
 
 function determineSumOfSequentialArray(array) {
-let sum = 0;
-for (let i = 0; i < array.length; i++) {
-sum += array[i];
+let sum = 0;  // constant space, Time O(1)
+for (let i = 0; i < array.length; i++) {   // O(n)
+sum += array[i];   // O(1)
 }
 return sum;
 }
 ```
 
 **Answer:**
-Time complexity: O(1)
-Space complexity: Linear (a string is returned)
+Time complexity: O(n)
+Space complexity: Constant (a number is returned)
 
 \*_Problem 5:_
 
@@ -309,16 +311,16 @@ Space complexity: Constant (a number is returned)
 
 ```
 function searchSortedArray(number, array, beginIndex = 0, endIndex = array.length - 1) {
-let middleIndex = Math.floor((beginIndex + endIndex)/2);  // Constant space
+let middleIndex = Math.floor((beginIndex + endIndex)/2);  // Constant space, O(1)
 if (array[middleIndex] === number) {  // O(1)
 return middleIndex;
 } else if (beginIndex >= endIndex) {  // O(1)
 return -1;
 } else if (array[middleIndex] < number) {  //O(1)
-beginIndex = middleIndex + 1;
+beginIndex = middleIndex + 1; // O(1)
 return recursiveBinarySearch(number, array, beginIndex, endIndex); // O(log n)
-} else if (array[middleIndex] > number) {
-endIndex = middleIndex - 1;
+} else if (array[middleIndex] > number) { // O(1)
+endIndex = middleIndex - 1; // O(1)
 return recursiveBinarySearch(number, array, beginIndex, endIndex);  //O(log n)
 }
 }
@@ -337,7 +339,7 @@ function compareArrays(array1, array2) {
 let arrayOfPairs = [];  // Linear space
 array1.forEach(function(e, i) {   // O(n)
 array2.forEach(function(e2, i2) {  // O(n)
-if (e === e2) {
+if (e === e2) {  // O(1)
 arrayOfPairs.push([i, i2]);   // O(1)
 }
 });
@@ -347,7 +349,7 @@ return arrayOfPairs;
 ```
 
 **Answer:**
-Time complexity: O(n)
+Time complexity: O(n^2)
 Space complexity: Linear (an array is returned)
 
 \*_Problem 8:_
@@ -356,26 +358,26 @@ Space complexity: Linear (an array is returned)
 function sortByValue(array){
 function swap(array, index1, index2){
 let temporaryValue = array[index1];  // Constant space
-array[index1] = array[index2];
-array[index2] = temporaryValue;
+array[index1] = array[index2]; // O(1)
+array[index2] = temporaryValue; // O(1)
 }
 let count = 1;    // Constant space
 while (count < array.length) {    // O(n)
 let swapCount = 0;    // Constant space
 for (let i=0; i<array.length-count; i++) {      //O(n)
-if (array[i] > array[i+1]) {
+if (array[i] > array[i+1]) { // O(1)
 swap(array, i, i+1);
-swapCount++;
+swapCount++;  // O(1)
 }
 }
-count++;
+count++; // O(1)
 }
 return array;
 }
 ```
 
 **Answer:**
-Time complexity: O(n)
+Time complexity: O(n^2)
 Space complexity: Constant (a number / original array is returned)
 
 \*_Problem 9:_
@@ -402,12 +404,12 @@ Space complexity: Linear (a new array is returned)
 function sumFilteredData(array) {
 return array.filter(function(element) {     // O(n), Linear space
 return ((element > 5) && (element < 20))      // O(n), Constant space
-}).reduce(function(valueToAdd, currentValue) {
-return valueToAdd + currentValue;  // Constant space
+}).reduce(function(valueToAdd, currentValue) {  //O(n)
+return valueToAdd + currentValue;  // O(1), Constant space
 }, 0);
 }
 ```
 
 **Answer:**
-Time complexity: O(n)
+Time complexity: O(n^2)
 Space complexity: Linear (.filter returns a new array)
