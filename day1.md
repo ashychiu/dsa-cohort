@@ -8,6 +8,7 @@ Big O notation is a mathematical notation that describes the limiting behavior o
 - Describe in 1-2 sentences of the complexity
 - Provide a code example of how the complexity works
 
+**Answer:**
 (Anti-clockwise)
 
 - O(1) Constant time - An algorithm that is bound by a value that does not depend on the size of the input.  
@@ -45,6 +46,7 @@ const factorial = n => {
 ```
 
 - Rank from 1-5 (1 being the best, 5 being the worst)
+  **Answer:**
 
 1. constant O(1)
 2. log O(logn)
@@ -98,7 +100,7 @@ TOTAL time complexity is the total amount of time required to run the all the op
 
 CONSOLIDATED time complexity is only considering the “heavy” or worse time complexity since it is going to have a bigger impact on the performance of that code. If a fucntion has one linear and a nested for...loop, the solidated time would be: n^2
 
-Total time complexity is written in the snippet: 2 O(1) + 2 O(n) + O(n^2)
+Total time complexity is written in the snippet: 2 O(1) + 2 O(n) + O(n^2)  
 Consolidated time complexity for the snippet above: O(n^2)
 
 ## Problem 6: Given the following piece of code:
@@ -127,20 +129,24 @@ const someFunction1 = (arr1) => {
 
 **Answer:**
 
-Total time complexity is written in the snippet: 2 O(1) + O(n) + O(n^3)
+Total time complexity is written in the snippet: 2 O(1) + O(n) + O(n^3)  
 Consolidated time complexity: O(n^3)
 
 ## Problem 7: Please explain in 3-5 sentences why we can ignore constants and consolidate our time complexities.
+
+**Answer:**
 
 When the argument is large enough or tends towards a particular value or infinity, the impact of constants will be insignifiant.
 
 ## Problem 8: In 2-3 sentences, please explain what space complexity is and why we care.
 
+**Answer:**
+
 Space complexity is how much additional memory needed to allocate to compute the algorithm. Taking up less memory will save cost.
 
 ## Problem 9: Given the following data TYPES, label what the space complexity is for each one:
 
-**Answer:**
+**Answers:**
 
 - Boolean: Constant
 - Undefined: Constant
@@ -160,35 +166,35 @@ Use a object when you don't need ordering or fast access to elements.
 
 const obj = {
 name: 'tony'
-}
-//inserting
-obj.age = 44;
+}  
+//inserting  
+obj.age = 44;  
 **Answer: O(1)**
 
 //removing  
-delete obj.age;
+delete obj.age;  
 **Answer: O(1)**
 
-//searching 1
-obj.hasOwnProperty['name']
+//searching 1  
+obj.hasOwnProperty['name']  
 **Answer: O(n)**
 
-//searching 2
-for (const prop in obj) {
-console.log(obj[prop])
-}
+//searching 2  
+for (const prop in obj) {  
+console.log(obj[prop])  
+}  
 **Answer: O(n)**
 
-//accessing
-obj.age //44
+//accessing  
+obj.age //44  
 **Answer: O(1)**
 
-//retrieving keys
-Object.keys(obj)
+//retrieving keys  
+Object.keys(obj)  
 **Answer: O(1)**
 
-//retrieving values
-Object.values(obj)
+//retrieving values  
+Object.values(obj)  
 **Answer: O(1)**
 
 ## Problem 12: Given the following array methods, label what the TIME complexity is for each one:
@@ -277,7 +283,7 @@ return -1
 ```
 
 **Answer:**
-Time complexity: O(n)
+Time complexity: O(n)  
 Space complexity: Constant (no extra space needed)
 
 \*_Problem 2:_
@@ -295,7 +301,7 @@ return arrayOfIndexes;
 ```
 
 **Answer:**
-Time complexity: O(1) + O(1) + O(n) = O(n)
+Time complexity: O(1) + O(1) + O(n) = O(n)  
 Space complexity: Linear (a new array is return)
 
 \*_Problem 3:_
@@ -315,7 +321,7 @@ return "Neither";   // n(1)
 ```
 
 **Answer:**
-Time complexity: O(1)
+Time complexity: O(1)  
 Space complexity: Linear (a string is returned)
 
 \*_Problem 4:_
@@ -333,7 +339,7 @@ return sum;
 ```
 
 **Answer:**
-Time complexity: O(n)
+Time complexity: O(n)  
 Space complexity: Constant (a number is returned)
 
 \*_Problem 5:_
@@ -347,7 +353,7 @@ return array.length \* (array.length + 1)/2;
 ```
 
 **Answer:**
-Time complexity: O(1)
+Time complexity: O(1)  
 Space complexity: Constant (a number is returned)
 
 \*_Problem 6:_
@@ -370,7 +376,7 @@ return recursiveBinarySearch(number, array, beginIndex, endIndex);  //O(log n)
 ```
 
 **Answer:**
-Time complexity: O(log n)
+Time complexity: O(log n)  
 Space complexity: Constant (a number is returned)
 
 \*_Problem 7:_
@@ -392,7 +398,7 @@ return arrayOfPairs;
 ```
 
 **Answer:**
-Time complexity: O(n^2)
+Time complexity: O(n^2)  
 Space complexity: Linear (a new array is returned)
 
 \*_Problem 8:_
@@ -420,7 +426,7 @@ return array;
 ```
 
 **Answer:**
-Time complexity: O(n^2)
+Time complexity: O(n^2)  
 Space complexity: Constant (a number / original array is returned, no extra space needed)
 
 \*_Problem 9:_
@@ -438,7 +444,7 @@ return dupeArray;
 ```
 
 **Answer:**
-Time complexity: O(n^2)
+Time complexity: O(n^2)  
 Space complexity: Linear (a new array is returned)
 
 \*_Problem 10:_
@@ -454,5 +460,5 @@ return valueToAdd + currentValue;  // O(1), Constant space
 ```
 
 **Answer:**
-Time complexity: O(n^2)
+Time complexity: O(n^2)  
 Space complexity: Linear (.filter() returns a new array)
