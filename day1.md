@@ -1,17 +1,45 @@
 ## Problem 1: In 3-4 sentences, please explain what Big O Notation is.
 
-Big O notation is
+Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. In computer science, big O notation is used to classify algorithms according to how their run time or space requirements grow as the input size grows. Big O notation characterizes functions according to their growth rates: different functions with the same growth rate may be represented using the same O notation. The letter O is used because the growth rate of a function is also referred to as the order of the function. A description of a function in terms of big O notation usually only provides an upper bound on the growth rate of the function.
 
 ## Problem 2: For each of the time complexities shown below:
 
 - Name the complexity
   (Anti-clockwise)
 
-  - O(1) constant
-  - O(logn) log
-  - O(n) linear
-  - O(n^2) quadratic
-  - O(n!) factorial
+  - O(1) Constant time - An algorithm that is bound by a value that does not depend on the size of the input.  
+    Example: Array.push(1)
+  - O(logn) Logarithmic time - A highly efficient algorithm that the ratio of the number of operations to the size of the input decreases and tends to zero when n increases.  
+    Example: Binary search
+  - O(n) Linear time - An algorithm that the running time increases at most linearly with the size of the input.  
+    Example: Array.find(element => element > 10)
+  - O(n^2) Quadratic time - An algorithm that the running time increases "squarely" with the size of the input.  
+    Example: Nested for loops
+
+  ```
+  for (let i=0, i< array.length, i++) {
+    for (let i=0, i< array.length, i++) {
+    console.log(array[i])
+    }
+  }
+  ```
+
+  - O(n!) Factorial time - An algorithm is said to be factorial time if T(n) is upper bounded by the factorial function n!.
+
+- Example:
+
+```
+const factorial = n => {
+    let num = n;
+
+    if (n === 0) return 1
+    for (let i = 0; i < n; i++) {
+        num = n * factorial(n - 1);
+    };
+
+    return num;
+};
+```
 
 - Rank from 1-5 (1 being the best, 5 being the worst)
 
