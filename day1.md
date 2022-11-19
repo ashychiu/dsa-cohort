@@ -1,5 +1,6 @@
 ## Problem 1: In 3-4 sentences, please explain what Big O Notation is.
 
+**Answers:**  
 Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. In computer science, big O notation is used to classify algorithms according to how their run time or space requirements grow as the input size grows. Big O notation characterizes functions according to their growth rates: different functions with the same growth rate may be represented using the same O notation. The letter O is used because the growth rate of a function is also referred to as the order of the function. A description of a function in terms of big O notation usually only provides an upper bound on the growth rate of the function.
 
 ## Problem 2: For each of the time complexities shown below:
@@ -8,7 +9,7 @@ Big O notation is a mathematical notation that describes the limiting behavior o
 - Describe in 1-2 sentences of the complexity
 - Provide a code example of how the complexity works
 
-**Answer:**
+**Answers:**
 (Anti-clockwise)
 
 - O(1) Constant time - An algorithm that is bound by a value that does not depend on the size of the input.  
@@ -158,7 +159,7 @@ Space complexity is how much additional memory needed to allocate to compute the
 
 ## Problem 10: Give two reasons when you should use a array and when you should use a object.
 
-**Answer:**
+**Answer:**  
 Use an array when you need fast access to indexed elements.  
 Use a object when you don't need ordering or fast access to elements.
 
@@ -265,7 +266,7 @@ const convertToString = arr2.join(' ')
 
 //method 6  
 const reversed = arr2.reverse();  
-?? **Answer: O(n)**
+**Answer: O(n)**
 
 ## Problem 13: For each one of these code blocks, please identify the time & space complexity and explanation of why it is.
 
