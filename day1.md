@@ -5,26 +5,29 @@ Big O notation is a mathematical notation that describes the limiting behavior o
 ## Problem 2: For each of the time complexities shown below:
 
 - Name the complexity
-  (Anti-clockwise)
+- Describe in 1-2 sentences of the complexity
+- Provide a code example of how the complexity works
 
-  - O(1) Constant time - An algorithm that is bound by a value that does not depend on the size of the input.  
-    Example: Array.push(1)
-  - O(logn) Logarithmic time - A highly efficient algorithm that the ratio of the number of operations to the size of the input decreases and tends to zero when n increases.  
-    Example: Binary search
-  - O(n) Linear time - An algorithm that the running time increases at most linearly with the size of the input.  
-    Example: Array.find(element => element > 10)
-  - O(n^2) Quadratic time - An algorithm that the running time increases "squarely" with the size of the input.  
-    Example: Nested for loops
+(Anti-clockwise)
 
-  ```
+- O(1) Constant time - An algorithm that is bound by a value that does not depend on the size of the input.  
+  Example: Array.push(1)
+- O(logn) Logarithmic time - A highly efficient algorithm that the ratio of the number of operations to the size of the input decreases and tends to zero when n increases.  
+  Example: Binary search
+- O(n) Linear time - An algorithm that the running time increases at most linearly with the size of the input.  
+  Example: Array.find(element => element > 10)
+- O(n^2) Quadratic time - An algorithm that the running time increases "squarely" with the size of the input.  
+  Example: Nested for loops
+
+```
+for (let i=0, i< array.length, i++) {
   for (let i=0, i< array.length, i++) {
-    for (let i=0, i< array.length, i++) {
-    console.log(array[i])
-    }
+  console.log(array[i])
   }
-  ```
+}
+```
 
-  - O(n!) Factorial time - An algorithm is said to be factorial time if T(n) is upper bounded by the factorial function n!.
+- O(n!) Factorial time - An algorithm is said to be factorial time if T(n) is upper bounded by the factorial function n!.
 
 - Example:
 
@@ -49,47 +52,54 @@ const factorial = n => {
 4. quadratic O(n^2)
 5. factorial O(n!)
 
-- Describe in 1-2 sentences of the complexity
-- Provide a code example of how the complexity works
-
 ## Problem 3: Name 3 reasons why we care about Big O and we care about code performance.
 
+**Answer:**
+
+1. Scalability - Big O indicates the complexity of an algorithm in terms of the size of its inputs. This is essential to know how algorithms will scale.
+2. Cost Saving - A fast algorithm requires less computing power and will save cost.
+3. Code performance allows us to improve the code so that the output of the algorithm could run faster and takes less space
+
 ## Problem 4: What is the problem of using a time method such as performance.now() to measure how “fast” a code runs on our machines.
+
+**Answer:**
+Every computer has different computing time, so it's not accurate to measure performance.
 
 ## Problem 5: Given the following piece of code:
 
 - Explain what the TOTAL time complexity is  
   o For example, if a function had one linear and a nested for...loop, it would be: n + n^2
 
-**Answer:**
-Total time complexity is the total time required to run the algorithm.
-
 - Explain what the CONSOLIDATED time complexity is
   o For example, if a function had one linear and a nested for...loop, it would condense to: n^2
 
 ```
 const someFunction = (arr1) => {
-arr1.push(1).pop() // Time complexity: O(1) + O(1)
+arr1.push(1).pop() **// Time complexity: O(1) + O(1)**
 
 for (let i = 0; i < arr1.length; i++) {
-console.log('do something 2') // Time complexity: O(n)
+console.log('do something 2') **// Time complexity: O(n)**
 }
 
 for (let i = 0; i < arr1.length; i++) {
-console.log('do something 3') // Time complexity: O(n)
+console.log('do something 3') **// Time complexity: O(n)**
 }
 
 for (let i = 0; i < arr1.length; i++) {
 for (let i = 0; i < arr1.length; i++) {
-console.log('do something 3') // Time complexity: O(n^2)
+console.log('do something 3') **// Time complexity: O(n^2)**
 }
 }
 }
 ```
 
 **Answer:**
-Total time complexity: 2 O(1) + 2 O(n) + O(n^2)
-Consolidated time complexity: O(n^2)
+TOTAL time complexity is the total amount of time required to run the all the operations in the algorithm. If a fucntion has one linear and a nested for...loop, it would be: n + n^2
+
+CONSOLIDATED time complexity is only considering the “heavy” or worse time complexity since it is going to have a bigger impact on the performance of that code. If a fucntion has one linear and a nested for...loop, the solidated time would be: n^2
+
+Total time complexity is written in the snippet: 2 O(1) + 2 O(n) + O(n^2)
+Consolidated time complexity for the snippet above: O(n^2)
 
 ## Problem 6: Given the following piece of code:
 
@@ -100,14 +110,14 @@ Consolidated time complexity: O(n^2)
 
 ```
 const someFunction1 = (arr1) => {
-  let sum = arr1[1] + arr[2]  // O(1)
+  let sum = arr1[1] + arr[2]  **// O(1)**
 
-  while (condition) {  // O(n)
-      sum = arr[5] + arr[7]  //O(1)
+  while (condition) {  **// O(n)**
+      sum = arr[5] + arr[7]  **//O(1)**
    }
-  for (let i = 0; i < arr1.length; i++) {     // O(n)
-    for (let i = 0; i < arr1.length; i++) {     // O(n)
-      for (let i = 0; i < arr1.length; i++) {     // O(n)
+  for (let i = 0; i < arr1.length; i++) {     **// O(n)**
+    for (let i = 0; i < arr1.length; i++) {     **// O(n)**
+      for (let i = 0; i < arr1.length; i++) {     **// O(n)**
         console.log('do something 3')
       }
     }
@@ -116,7 +126,8 @@ const someFunction1 = (arr1) => {
 ```
 
 **Answer:**
-Total time complexity: 2 O(1) + O(n) + O(n^3)
+
+Total time complexity is written in the snippet: 2 O(1) + O(n) + O(n^3)
 Consolidated time complexity: O(n^3)
 
 ## Problem 7: Please explain in 3-5 sentences why we can ignore constants and consolidate our time complexities.
@@ -125,9 +136,11 @@ When the argument is large enough or tends towards a particular value or infinit
 
 ## Problem 8: In 2-3 sentences, please explain what space complexity is and why we care.
 
-Space complexity is
+Space complexity is how much additional memory needed to allocate to compute the algorithm. Taking up less memory will save cost.
 
 ## Problem 9: Given the following data TYPES, label what the space complexity is for each one:
+
+**Answer:**
 
 - Boolean: Constant
 - Undefined: Constant
@@ -140,6 +153,8 @@ Space complexity is
 ## Problem 10: Give two reasons when you should use a array and when you should use a object.
 
 **Answer:**
+Use an array when you need fast access to indexed elements.  
+Use a object when you don't need ordering or fast access to elements.
 
 ## Problem 11: Given the following object methods, label what the TIME complexity is for each one:
 
@@ -378,7 +393,7 @@ return arrayOfPairs;
 
 **Answer:**
 Time complexity: O(n^2)
-Space complexity: Linear (an array is returned)
+Space complexity: Linear (a new array is returned)
 
 \*_Problem 8:_
 
@@ -406,7 +421,7 @@ return array;
 
 **Answer:**
 Time complexity: O(n^2)
-Space complexity: Constant (a number / original array is returned)
+Space complexity: Constant (a number / original array is returned, no extra space needed)
 
 \*_Problem 9:_
 
@@ -440,4 +455,4 @@ return valueToAdd + currentValue;  // O(1), Constant space
 
 **Answer:**
 Time complexity: O(n^2)
-Space complexity: Linear (.filter returns a new array)
+Space complexity: Linear (.filter() returns a new array)
