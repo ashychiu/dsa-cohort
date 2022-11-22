@@ -50,9 +50,9 @@ Please write in time complexity of O(n)
 \*/
 
 // Pseduo code  
-// setup an empty string of substring  
-// loop through the string, check if hashmap has the character, if yes stop. if not add to substring  
-// return length of subString
+// setup a hashmap
+// loop through the string, check if hashmap has the character, if yes stop. if not add to hashmap  
+// return the size of the hashmap
 
 **Answer**
 
