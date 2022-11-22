@@ -57,12 +57,12 @@ Please write in time complexity of O(n)
 **Answer**
 
 ```
-const longestSubstringInString = (str) => {
+const longestSubstringFromStart = (str) => {
 const hashmap = new Map();
     for (let i=0; i < str.length; i++) {
         if (hashmap.has(str[i])) break
         else {
-        hashmap.set(str[i], 1)
+        hashmap.set(str[i], i)
         }
     }
   return hashmap.size
@@ -80,3 +80,31 @@ const hashmap = new Map();
 
 **bonus challenge**  
 For problem #2, find the longest substring from the entire string itself and NOT from the start
+
+// psuedo code  
+// set up a hashmap and maxLength
+// loop through the string
+// check if the character already in hashmap, if not, add to hashmap
+// if yes, substring starts from the repeated character + 1
+// compare the length of the current substring to maxlegth
+// if bigger, set to be new max
+// return max length
+
+**Answer**
+
+```
+const longestSubstringInString = (str) => {
+    let head = 0; maxLength = 0
+    const hashmap = new Map();
+
+    for (let i=0; i < str.length; i++) {
+        if (hashmap.get(str[i]) >= head) {
+          head = hashmap.get(str[i]) + 1
+        }
+        hashmap.set(str[i], i)
+        let currentLength = i - head + 1
+        maxLength = Math.max (currentLength, maxLength)
+    }
+  return maxLength
+}
+```
