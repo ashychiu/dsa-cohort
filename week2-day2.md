@@ -78,16 +78,17 @@ const hashmap = new Map();
 // longestSubstringInString('bbbbbb') 1 because of ‘b’  
 // longestSubstringInString('longestsubstring') 7 because of ‘longest’
 
-**bonus challenge**  
+## Bonus Challenge
+
 For problem #2, find the longest substring from the entire string itself and NOT from the start
 
 // psuedo code  
-// set up a hashmap and maxLength
-// loop through the string
-// check if the character already in hashmap, if not, add to hashmap
-// if yes, substring starts from the repeated character + 1
-// compare the length of the current substring to maxlegth
-// if bigger, set to be new max
+// set up a hashmap and maxLength  
+// loop through the string  
+// check if the character already in hashmap, if not, add to hashmap  
+// if yes, substring starts from the repeated character + 1  
+// compare the length of the current substring to maxlegth  
+// if bigger, set to be new max  
 // return max length
 
 **Answer**
