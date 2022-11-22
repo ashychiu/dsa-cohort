@@ -34,9 +34,9 @@ return pointer1 === str1.length
 
 // Test Cases:
 
-// subsequence('hello', 'hello world') true
-// subsequence('sing', 'sting') true
-// subsequence('abc', 'abracadabra') true
+// subsequence('hello', 'hello world') true  
+// subsequence('sing', 'sting') true  
+// subsequence('abc', 'abracadabra') true  
 // subsequence('abc', 'acb') false
 
 ## Problem #2: Sliding Window Pattern
@@ -49,9 +49,9 @@ string.
 Please write in time complexity of O(n)
 \*/
 
-// Pseduo code
-// setup an empty string of substring
-// loop through the string, check if hashmap has the character, if yes stop. if not add to substring
+// Pseduo code  
+// setup an empty string of substring  
+// loop through the string, check if hashmap has the character, if yes stop. if not add to substring  
 // return length of subString
 
 **Answer**
@@ -71,11 +71,11 @@ const hashmap = new Map();
 
 // Test Cases:
 
-// longestSubstringInString('') 0
-// longestSubstringInString('rithmschool') 7 because of ‘rithmsc’
-// longestSubstringInString('thisisawesome') 4 because of ‘this’
-// longestSubstringInString('thecatinthehat') 5 because of ‘theca’
-// longestSubstringInString('bbbbbb') 1 because of ‘b’
+// longestSubstringInString('') 0  
+// longestSubstringInString('rithmschool') 7 because of ‘rithmsc’  
+// longestSubstringInString('thisisawesome') 4 because of ‘this’  
+// longestSubstringInString('thecatinthehat') 5 because of ‘theca’  
+// longestSubstringInString('bbbbbb') 1 because of ‘b’  
 // longestSubstringInString('longestsubstring') 7 because of ‘longest’
 
 **bonus challenge**  
