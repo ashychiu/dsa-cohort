@@ -73,7 +73,7 @@ Note:
 // the end pointer moves to middleIndex -1  
 // if the value of middleIndex is smaller than target  
 // the start pointer moves to middleIndex +1  
-// the loop continues as long as start index is smaller than end index  
+// the loop continues as long as start index is smaller than or equal to end index  
 // return -1 if the loop ends without a match
 
 **Answer**
