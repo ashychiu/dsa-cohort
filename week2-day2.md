@@ -89,7 +89,7 @@ For problem #2, find the longest substring from the entire string itself and NOT
 // compare the length of the current substring to maxlegth  
 // if bigger, set to be new max  
 // Now the new substring starts from the repeated character + 1  
-// repeat till the end of the string
+// repeat till the end of the string  
 // return max length
 
 **Answer**
