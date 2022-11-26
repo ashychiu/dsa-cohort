@@ -9,7 +9,7 @@ appear somewhere in the second string, without their order changing.
 Write your solution with time complexity O(n) and space O(1)
 \*/
 
-// Pseduo code  
+**// Pseudo code **
 // setup 2 pointers, one at the start of str1, the other at the start of str2  
 // if the values of the 2 pointers match, both pointers move forward by one character  
 // if not, pointer1 stays but pointer2 moves forward until it matches with pointer1  
@@ -49,7 +49,7 @@ string.
 Please write in time complexity of O(n)
 \*/
 
-// Pseduo code  
+**// Pseudo code **
 // setup a hashmap
 // loop through the string, check if hashmap has the character, if yes stop. if not add to hashmap  
 // return the size of the hashmap
@@ -82,7 +82,7 @@ const hashmap = new Map();
 
 For problem #2, find the longest substring from the entire string itself and NOT from the start
 
-// psuedo code  
+**// Pseudo code **
 // set up a hashmap and maxLength  
 // loop through the string  
 // check if the character already in hashmap, if yes, that mean the character isn't unique anymore, thus the curent substring ends  
