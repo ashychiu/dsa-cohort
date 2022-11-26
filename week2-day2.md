@@ -22,7 +22,7 @@ Write your solution with time complexity O(n) and space O(1)
 const subsequence = (str1, str2) => {
 let pointer1 = 0
 let pointer2 = 0
-while (pointer2 < str2.length) {
+while (pointer1 < str1.length && pointer2 < str2.length) {
     if (str1[pointer1] === str2[pointer2]) {
       pointer1++
       pointer2++
