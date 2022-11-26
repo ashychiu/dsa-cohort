@@ -7,18 +7,47 @@ Example 1:
 Input: nums = [3,2,3] Output: 3  
 Example 2:  
 Input: nums = [2,2,1,1,1,2,2]  
-Output: 2 Constraints:  
+Output: 2
+
+Constraints:  
 n == nums.length  
-1 <= n <= 5 \* 104 -109 <= nums[i] <= 109  
+1 <= n <= 5 \* 104  
+ -109 <= nums[i] <= 109
+
 /\*\*
 
-- @param {number[]} nums _ @return {number}
-  _/
+- @param {number[]} nums
+- @return {number}
+  \*\*/
+
+**Pseudo code**
+// set up a frequency object
+// loop through the array to set key as array[i] and value and the frequency
+// set up max frequency = n/2
+// loop through the frequency map
+// if the freqency value is bigger than max, set max to be current freqency value
+// return the key with value max in the frequency map
 
 **Answer**
 
 ```
-  const solution = (nums) => { }
+  const solution = (nums) => {
+  const freqCounter = new Map()
+
+    for ( let key of nums) {
+      freqCounter.set(key, freqCounter.get(key) + 1 || 1)
+    }
+  let maxFrequency = Math.floor(nums.length/2)
+  let mostFrequentElement
+    for (const [key, value] of freqCounter) {
+      if (freqCounter.get(key) >= maxFrequency) {
+        maxFrequency = freqCounter.get(key)
+        mostFrequentElement = key
+      }
+    }
+    return mostFrequentElement
+  }
+
 ```
 
 ## Problem #2: Divide and Conquer Pattern
