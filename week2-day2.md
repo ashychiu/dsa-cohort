@@ -13,8 +13,8 @@ Write your solution with time complexity O(n) and space O(1)
 // setup 2 pointers, one at the start of str1, the other at the start of str2  
 // if the values of the 2 pointers match, both pointers move forward by one character  
 // if not, pointer1 stays but pointer2 moves forward until it matches with pointer1  
-// as long as pointer2 is not at the end of str2, the loop continues  
-// when the loop ends, if pointer1 does not move to the end, that means there is no match --> return false
+// it continues as long as pointer1 is not at end of str1 & pointer2 is not at end of str2
+// when the loop ends, if pointer1 does not move to last index + 1 (ie str.length), that means there is no match --> return false
 
 **Answer**
 
