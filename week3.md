@@ -14,13 +14,7 @@ n == nums.length
 1 <= n <= 5 \* 104  
  -109 <= nums[i] <= 109
 
-/\*\*
-
-- @param {number[]} nums
-- @return {number}
-  \*\*/
-
-**Pseudo code**
+**Pseudo code**  
 // set up a frequency object  
 // loop through the array to set key as array[i] and value and the frequency  
 // set up max frequency = n/2  
@@ -55,7 +49,8 @@ n == nums.length
 
 sorted (in ascending order) integer array nums of n elements and a target value, write a function to search target in nums.  
 If target exists, then return its index, otherwise return -1.  
-Please write in time complexity of O(log n)  
+Please write in time complexity of O(log n)
+
 Example 1:  
 Input: nums = [-1,0,3,5,9,12], target = 9 // Output: 4  
 Explanation: 9 exists in nums and its index is 4  
@@ -70,7 +65,7 @@ Note:
 2. n will be in the range [1, 10000].
 3. The value of each element in nums will be in the range [-9999, 9999].
 
-**Pseudo code**
+**Pseudo code**  
 // set up 2 pointers, one at the start of the array and the other at the end  
 // set up a middleIndex pointer  
 // if the value of middleIndex is the same as target, return middleIndex  
