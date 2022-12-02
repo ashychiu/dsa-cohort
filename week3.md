@@ -167,7 +167,7 @@ Each element in nums appears once or twice.
 // Pseudo code
 // iterate through the array, and record the frequency
 // iterate through the array again, compare the value of the key on frequency counter
-// if the value is small than 2, set num[i] to 0 (given 1 <= nums[i] <= n, there will be no zeros in the array)
+// if the frequecy is less than 2, set num[i] to 0 (given 1 <= nums[i] <= n, there will be no zeros in the array)
 // filter out the zeros, those left are an array of numbers which occur twice
 // use new Set to get unique numbers
 
@@ -182,7 +182,8 @@ const findDuplicates = (nums) => {
       nums[i] = 0     // given 1 <= nums[i] <= n
     }
   }
-  nums = [...new Set(nums.filter(num => num > 0))]
+  nums = nums.filter(num => num > 0)
+  nums = [...new Set(nums)] // in attempt of constant space but unsuccessful
 return nums
 };
 ```
