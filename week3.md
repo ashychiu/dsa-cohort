@@ -17,7 +17,7 @@ n == nums.length
 **Pseudo code**  
 // set up a frequency object  
 // loop through the array to set key as array[i] and value and the frequency  
-// set up max frequency = n/2  
+// set up majority = n/2  
 // loop through the frequency map  
 // if the freqency value is bigger than max, set max to be current freqency value  
 // return the key with value max in the frequency map
@@ -139,11 +139,13 @@ You must write an algorithm that runs in O(n) time and uses only constant extra 
 Example 1:
 
 Input: nums = [4,3,2,7,8,2,3,1]  
-Output: [2,3]  
+Output: [2,3]
+
 Example 2:
 
 Input: nums = [1,1,2]  
-Output: [1]  
+Output: [1]
+
 Example 3:
 
 Input: nums = [1]  
@@ -162,8 +164,25 @@ Each element in nums appears once or twice.
 - @return {number[]}
   \*/
 
+// Pseudo code
+// iterate through the array, and record the frequency
+// iterate through the array again, compare the value of the key on frequency counter
+// if the value is small than 2, set num[i] to 0 (given 1 <= nums[i] <= n, there will be no zeros in the array)
+// filter out the zeros, those left are an array of numbers which occur twice
+// use new Set to get unique numbers
+
 ```
 const findDuplicates = (nums) => {
-
+  const freqCounter = new Map()
+  for (let i=0; i<nums.length; i++) {
+    freqCounter.set(nums[i], freqCounter.get(nums[i]) + 1 || 1)
+  }
+  for (let i=0; i<nums.length; i++) {
+    if (freqCounter.get(nums[i]) < 2) {
+      nums[i] = 0     // given 1 <= nums[i] <= n
+    }
+  }
+  nums = [...new Set(nums.filter(num => num > 0))]
+return nums
 };
 ```
