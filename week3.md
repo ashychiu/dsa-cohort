@@ -87,7 +87,7 @@ const binaryIterativeSearch = (nums, target) => {
         else if (nums[middle] > target) end = middle - 1
         else start = middle + 1
     }
-    return -1
+  return -1
 }
 
 ```
@@ -122,9 +122,32 @@ Constraints:
 - @return {number}
   \*/
 
+// Pseudo code  
+// sort the array from small to large
+// set up 3 pointers a b c, one at the start (a), one at the end (c), one at second last to the end (b)
+// set up a counter
+// if arr[a] + arr[c] is bigger than arr[c], then all the indices between a and b will be valid triangle as well
+// therefore counter increment by b - a
+// now the pointer b moves to the left by one place and see if there are triangles
+// else, pointer a move to the right by one place and see if there are triangles
+// as long as a is less than b, the loop continues
+
 ```
 const triangleNumber = (nums) => {
+  let counter = 0;
+  const arr = nums.sort();
 
+  for (let c = arr.length -1; c >= 1; c--) {
+    let a = 0, b = c-1;
+    while (a < b) {
+    if (nums[a] + nums[b] > nums[c]) {
+      counter += b-a
+      b--
+    }
+    else a++
+  }
+  }
+  return counter
 };
 ```
 
@@ -164,11 +187,11 @@ Each element in nums appears once or twice.
 - @return {number[]}
   \*/
 
-// Pseudo code
-// iterate through the array, and record the frequency
-// iterate through the array again, compare the value of the key on frequency counter
-// if the frequecy is less than 2, set num[i] to 0 (given 1 <= nums[i] <= n, there will be no zeros in the array)
-// filter out the zeros, those left are an array of numbers which occur twice
+// Pseudo code  
+// iterate through the array, and record the frequency  
+// iterate through the array again, compare the value of the key on frequency counter  
+// if the frequecy is less than 2, set num[i] to 0 (given 1 <= nums[i] <= n, there will be no zeros in the array)  
+// filter out the zeros, those left are an array of numbers which occur twice  
 // use new Set to get unique numbers
 
 ```
@@ -182,8 +205,10 @@ const findDuplicates = (nums) => {
       nums[i] = 0     // given 1 <= nums[i] <= n
     }
   }
+
+  // in attempt of constant space
   nums = nums.filter(num => num > 0)
-  nums = [...new Set(nums)] // in attempt of constant space but unsuccessful
-return nums
+  nums = [...new Set(nums)]
+  return nums
 };
 ```
