@@ -198,7 +198,8 @@ Each element in nums appears once or twice.
 // iterate through the array again, compare the value of the key on frequency counter  
 // if the frequecy is less than 2, set num[i] to 0 (given 1 <= nums[i] <= n, there will be no zeros in the array)  
 // filter out the zeros, those left are an array of numbers which occur twice  
-// use new Set to get unique numbers
+// use new Set to get unique numbers  
+// in this case the filtered array & new Set() are always small than the original array, can it consider as constant space?
 
 **Answer**
 
@@ -213,8 +214,8 @@ const findDuplicates = (nums) => {
       nums[i] = 0     // given 1 <= nums[i] <= n
     }
   }
-
   // in attempt of constant space
+  // the filtered & new Set() are always small than the original array, can it consider as constant space?
   nums = nums.filter(num => num > 0)
   nums = [...new Set(nums)]
   return nums
