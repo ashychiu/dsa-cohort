@@ -133,8 +133,7 @@ Constraints:
 // if not, that means arr[a] isn't big enough, so pointer a move to the right by one place and check if there are triangles  
 // as long as a is less than b, the loop continues
 
-// time complexity: O(n^2)  
-// space complexity: Constant
+**Answer**
 
 ```
 const triangleNumber = (nums) => {
@@ -154,6 +153,9 @@ const triangleNumber = (nums) => {
   return counter
 };
 ```
+
+// time complexity: O(n^2)  
+// space complexity: Constant
 
 ## Bonus Problem #2: Frequency Counter Pattern
 
@@ -197,6 +199,8 @@ Each element in nums appears once or twice.
 // if the frequecy is less than 2, set num[i] to 0 (given 1 <= nums[i] <= n, there will be no zeros in the array)  
 // filter out the zeros, those left are an array of numbers which occur twice  
 // use new Set to get unique numbers
+
+**Answer**
 
 ```
 const findDuplicates = (nums) => {
