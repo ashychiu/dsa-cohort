@@ -127,7 +127,7 @@ Constraints:
 // set up 3 pointers a b c, one at the start (a), one at the end (c), one at second last to the end (b)  
 // set up a counter  
 // loop start from the end since that is the longest length  
-// if arr[a] + arr[c] is bigger than arr[c], then all the indices between a and b will be valid triangle as well  
+// if arr[a] + arr[b] is bigger than arr[c], then all the indices between a and b will be valid triangle as well  
 // therefore counter increment by b - a  
 // now the pointer b moves to the left by one place and check if there are triangles  
 // if not, that means arr[a] isn't big enough, so pointer a move to the right by one place and check if there are triangles  
