@@ -152,10 +152,10 @@ const triangleNumber = (nums) => {
   }
   return counter
 };
-```
 
-// time complexity: O(n^2)  
+// time complexity: O(n^2)
 // space complexity: Constant
+```
 
 ## Bonus Problem #2: Frequency Counter Pattern
 
