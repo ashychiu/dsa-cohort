@@ -3,13 +3,29 @@
 // Write a recursive function called flatTheArray which accepts an array of arrays  
 // and returns a new array with all values flattened.
 
-// flatTheArray([1, 2, 3, [4, 5] ]) // [1, 2, 3, 4, 5]
-// flatTheArray([1, [2, [3, 4], [[5]]]]) // [1, 2, 3, 4, 5]
-// flatTheArray([[1],[2],[3]]) // [1,2,3]
+// flatTheArray([1, 2, 3, [4, 5] ]) // [1, 2, 3, 4, 5]  
+// flatTheArray([1, [2, [3, 4], [[5]]]]) // [1, 2, 3, 4, 5]  
+// flatTheArray([[1],[2],[3]]) // [1,2,3]  
 // flatTheArray([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) // [1,2,3]
 
+**Pseudo Code**
+//Iterate through the array
+//if array[i].length is truthy -> resursive path
+//if not -> base path, push array[i] into the empty array
+
+**Answer:**
+
 ```
-const flatTheArray = (arr) => {
+const flatTheArray = (arr, flatArray = []) => {
+    for (let i=0; i<arr.length; i++) {
+    if (arr[i].length) {
+      flatTheArray(arr[i], flatArray)  //recursive path
+    }
+    else {
+      flatArray.push(arr[i])   // base path
+    }
+  }
+return flatArray
 }
 ```
 
@@ -18,7 +34,7 @@ const flatTheArray = (arr) => {
 // Write a recursive function called capitalizeWords.  
 // Given an array of words, return a new array containing each word capitalized.
 
-// let words = ['tony', 'kim'];
+// let words = ['tony', 'kim'];  
 // capitalizedAllLetters(words); // ['TONY', 'KIM']
 
 ```
@@ -30,12 +46,12 @@ const capitalizeAllLetters = (array) => {
 
 // example 7: factorial
 
-// factorial(1) // 1
-// factorial(2) // 2
+// factorial(1) // 1  
+// factorial(2) // 2  
 // factorial(7) // 5040
 
-// Write a function factorial which accepts a number and returns the factorial of that number.
-// A factorial is the product of an integer and all the integers below it;
+// Write a function factorial which accepts a number and returns the factorial of that number.  
+// A factorial is the product of an integer and all the integers below it;  
 // e.g., factorial four ( 4! ) is equal to 24, because 4 _ 3 _ 2 \* 1 equals 24. factorial zero
 (0!) is always 1.
 
