@@ -138,7 +138,7 @@ Constraints:
 ```
 const triangleNumber = (nums) => {
   let counter = 0;
-  const arr = nums.sort();
+  const arr = nums.sort((a, b) => a-b);
 
   for (let c = arr.length -1; c >= 1; c--) {
     let a = 0, b = c-1;
