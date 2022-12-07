@@ -8,12 +8,10 @@
 // flatTheArray([[1],[2],[3]]) // [1,2,3]  
 // flatTheArray([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) // [1,2,3]
 
-**Pseudo Code**
-//Iterate through the array
-//if array[i].length is truthy -> resursive path
-//if not -> base path, push array[i] into the empty array
-
-**Answer:**
+//Pseudo code  
+//Iterate through the array  
+//if array[i].length is truthy -> resursive path  
+//if not -> base path, push array[i] into empty array
 
 ```
 const flatTheArray = (arr, flatArray = []) => {
