@@ -13,6 +13,8 @@
 //if array[i].length is truthy -> resursive path  
 //if not -> base path, push array[i] into empty array
 
+**Answer:**
+
 ```
 const flatTheArray = (arr, flatArray = []) => {
     for (let i=0; i<arr.length; i++) {
@@ -35,8 +37,22 @@ return flatArray
 // let words = ['tony', 'kim'];  
 // capitalizedAllLetters(words); // ['TONY', 'KIM']
 
+//Pseudo code  
+//Set up an empty array as arguement  
+//Iterate through the array  
+//Convert array[i] to upper case
+//push into empty array
+
+**Answer:**
+
 ```
-const capitalizeAllLetters = (array) => {
+const capitalizeAllLetters = (array, capitalized = []) => {
+  for (let i=0; i<array.length; i++) {
+    if (array[i].length) {
+      capitalized.push(array[i].toUpperCase())
+    }
+  }
+  return capitalized
 }
 ```
 
@@ -53,8 +69,14 @@ const capitalizeAllLetters = (array) => {
 // e.g., factorial four ( 4! ) is equal to 24, because 4 _ 3 _ 2 \* 1 equals 24. factorial zero
 (0!) is always 1.
 
+**Answer:**
+
 ```
-function factorial(x){
+function factorial(x, product=1) {
+  if (x === 1) {
+    return product
+  }
+  return factorial(x-1, product * x)
 }
 
 ```
@@ -70,8 +92,16 @@ collectStrings(obj) // ["foo", "bar", "baz"])
 
 //recursion with helper
 
+**Answer:**
+
 ```
-function collectStrings(obj) {
+function collectStrings(obj, stringArray =[]) {
+  for (const property in obj) {
+    if (typeof (obj[property]) === 'string') {
+      stringArray.push(obj[property])
+    }
+  }
+  return stringArray
 }
 
 ```
@@ -127,81 +157,47 @@ US/docs/Web/JavaScript/Reference/Global_Objects/Map/get
 
 // age (solution should look like)
 
+//Pseudo code  
+//iterate through the array  
+//get the age in the Map  
+//compare the value with that of the next object  
+//if bigger, swap  
+//if not, no swap
+
+**Answer:**
+
 ```
-const sortedByAge = [
-  {
-      name: 'Tony Kim',
-      age: new Map([['age', 3]]),
-      favoriteMovie: [
-          {
-              title: 'Top Gun',
-              genre: 'action',
-              rating: 10
-          }
-      ]
-  },
-  {
-      name: 'John Smith',
-      age: new Map([['age', 35]]),
-      favoriteMovie: [
-          {
-              title: 'Saw',
-              genre: 'horror',
-              rating: 8
-          }
-      ]
-  },
-  {
-      name: 'John Smith',
-      age: new Map([['age', 88]]),
-      favoriteMovie: [
-          {
-              title: 'Hulk',
-              genre: 'action',
-              rating: 6
-          }
-      ]
+const sortedByAge = (data) => {
+  for (let i = data.length -1; i > 0; i--) {
+  for (let j = 0; j < i; j++) {
+  if (data[j].age.get("age") > data[j+1].age.get("age")) {
+  let temp = data[j]
+  data[j] = data[j+1]
+  data[j+1] = temp
+}
+}
   }
-]
+  return data
+}
 ```
 
 // favorite movie by rating (solution should look like)
 
+**Answer:**
+
 ```
-const sortedByRating = [
-  {
-      name: 'John Smith',
-      age: new Map([['age', 88]]),
-      favoriteMovie: [
-          {
-              title: 'Hulk',
-              genre: 'action',
-              rating: 6
-          }
-      ]
-  },
-  {
-      name: 'John Smith',
-      age: new Map([['age', 35]]),
-      favoriteMovie: [
-          {
-              title: 'Saw',
-              genre: 'horror',
-              rating: 8
-          }
-      ]
-  },
-  {
-      name: 'Tony Kim',
-      age: new Map([['age', 3]]),
-      favoriteMovie: [
-          {
-              title: 'Top Gun',
-              genre: 'action',
-              rating: 10
-          }
-      ]
+const sortedByRating = (data) => {
+  for (let i = data.length -1; i > 0; i--) {
+  for (let j = 0; j < i; j++) {
+  if (data[j].favoriteMovie[0].rating > data[j+1].favoriteMovie[0].rating) {
+  let temp = data[j]
+  data[j] = data[j+1]
+  data[j+1] = temp
+}
+// console.log(data[j].favoriteMovie[0].rating)
+}
   }
-]
+  return data
+}
 
 ```
