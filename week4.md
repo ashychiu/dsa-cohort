@@ -148,14 +148,10 @@ const data = [
 ]
 ```
 
-// Using the bubble sort, please sort each profile
+// Using the bubble sort, please sort each profile  
 // by ascending order for the following properties:
 
-// \*\*\* If you want to know how to retrieve a value from a map,  
-// please see https://developer.mozilla.org/en-
-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get
-
-// age (solution should look like)
+**(5a) Sort by age**
 
 //Pseudo code  
 //iterate through the array  
@@ -181,7 +177,7 @@ const sortedByAge = (data) => {
 }
 ```
 
-// favorite movie by rating (solution should look like)
+**(5a) Sort by favorite movie rating**
 
 **Answer:**
 
