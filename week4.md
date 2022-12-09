@@ -199,7 +199,7 @@ const sortedByRating = (data) => {
 
 ## Bonus Challenge
 
-// problem 15: capitalizeFirstLetter
+// problem 1: capitalizeFirstLetter
 
 // Write a recursive function called capitalizeTheFirst.  
 // Given an array of strings, capitalize the first letter of each string in the array.
@@ -216,14 +216,3 @@ const sortedByRating = (data) => {
   return capitalized
 }
 ```
-
-// problem #2: capitilize all letters
-
-// Write a recursive function called capitalizeWords.  
-// Given an array of words, return a new array containing each word capitalized.
-
-// let words = ['tony', 'kim'];
-// capitalizedAllLetters(words); // ['TONY', 'KIM']
-
-const capitalizeAllLetters = (array) => {
-}
