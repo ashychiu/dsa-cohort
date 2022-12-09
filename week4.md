@@ -190,7 +190,6 @@ const sortedByRating = (data) => {
   data[j] = data[j+1]
   data[j+1] = temp
 }
-// console.log(data[j].favoriteMovie[0].rating)
 }
   }
   return data
