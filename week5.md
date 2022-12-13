@@ -10,31 +10,50 @@ Please see below for the data returned from the database.
 
 ```
 const data = {
-    results: {
-payload: [ {
-profile: {
-name: 'Tony',
-                    rank: 9,
-                    favorites: [
-{
-title: 'Spider-Man', rating: 5
-}, {
-rating: 9 }
-]
-} },
-{
-profile: {
-name: 'John', rank: 2, favorites: [
-{
-title: 'Hulk',
-rating: 1 },
-{
-title: 'Top Gun', rating: 8
+  results: {
+    payload: [
+      {
+        profile: {
+          name: "Tony",
+          rank: 9,
+          favorites: [
+            {
+              title: "Spider-Man",
+              rating: 5,
+            },
+            {
+              rating: 9,
+            },
+          ],
+        },
+      },
+      {
+        profile: {
+          name: "John",
+          rank: 2,
+          favorites: [
+            {
+              title: "Hulk",
+              rating: 1,
+            },
+            {
+              title: "Top Gun",
+              rating: 8,
+            },
+          ],
+        },
+      },
+    ],
+  },
+};
+
+const mergeSearchByRank = (arr) {
+    if (arr.length <= 1) return arr;
+    let mid = Math.floor (arr.length /2);
+    let left = mergeSearchByRank (arr.slice(0, mid))
+    let right = mergeSearchByRank (arr.slice(mid))
+    return (left, right)
 }
-]
-} }
-]
-} }
 ```
 
 ## Problem #2: Singly Linked List:
@@ -64,3 +83,33 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 Example 2:  
 Input: height = [1,1]  
 Output: 1
+
+//Pseudo code  
+//set up two pointers, one at the start, one at start+1
+//set up max = 0
+//loop the pointer2 through the end
+//check if the volume is bigger than max
+//return max
+
+```
+const maxWater = (arr) => {
+  let max = 0;
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left < right) {
+    let volume = Math.min(arr[left], arr[right]) * (right - left);
+    console.log(left, right, volume);
+    max = Math.max(max, volume);
+    if (arr[left] < arr[right]) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+
+  return max;
+};
+```
+
+}
