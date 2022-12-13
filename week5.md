@@ -85,10 +85,12 @@ Input: height = [1,1]
 Output: 1
 
 //Pseudo code  
-//set up two pointers, one at the start, one at start+1
+//set up two pointers, one at the start, one at the end
 //set up max = 0
-//loop the pointer2 through the end
-//check if the volume is bigger than max
+//calulate the volume between left & right
+//check if the volume is bigger than max, if yes, set max = volume
+//if the value of left pointer is smaller, move left pointer to the right (so to find bigger volume)
+//if not, move right pointer to the left (to find bigger vol)
 //return max
 
 ```
