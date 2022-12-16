@@ -22,6 +22,7 @@ const data = {
               rating: 5,
             },
             {
+              title: "Spongebob",
               rating: 9,
             },
           ],
@@ -46,14 +47,47 @@ const data = {
     ],
   },
 };
+```
 
-const mergeSearchByRank = (arr) {
-    if (arr.length <= 1) return arr;
-    let mid = Math.floor (arr.length /2);
-    let left = mergeSearchByRank (arr.slice(0, mid))
-    let right = mergeSearchByRank (arr.slice(mid))
-    return (left, right)
-}
+```
+const mergeSortByRank = (arr) => {
+  if (arr.length <= 1) return arr;
+  let mid = Math.floor(arr.length / 2);
+  let left = mergeSearchByRank(arr.slice(0, mid));
+  let right = mergeSearchByRank(arr.slice(mid));
+  return merge(left, right);
+};
+
+const merge = (arr1, arr2) => {
+  let sorted = [];
+  let i = 0;
+  let j = 0;
+
+  const rank1 = arr1[i].profile.rank;
+  const rank2 = arr2[j].profile.rank;
+
+  while (i < arr1.length && j < arr2.length) {
+    if (rank2 > rank1) {
+      sorted.push(arr1[i]);
+      i++;
+    } else {
+      sorted.push(arr2[j]);
+      j++;
+    }
+  }
+
+  while (i < arr1.length) {
+    sorted.push(arr1[i]);
+    i++;
+  }
+
+  while (j < arr2.length) {
+    sorted.push(arr1[j]);
+    j++;
+  }
+
+  return sorted;
+};
 ```
 
 ## Problem #2: Singly Linked List:
@@ -64,10 +98,57 @@ Please construct the two classes with the appropriate properties for the Node an
 - Pop()
 
 ```
-class Node{ constructor(val){ }
+class Node {
+  constructor(value){
+    this.value = value;
+    this.next = null;
+  }
 }
-class SinglyLinkedList{ constructor(){
-} }
+
+class SinglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+  push(value) {
+    const newNode = new Node(value);
+
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+
+    this.length++;
+    return this;
+  }
+
+  pop() {
+    if (!this.head) return null;
+
+    let current = this.head;
+    let newTail = current;
+
+    while (current.next) {
+      newTail = current;
+      current = current.next;
+    }
+
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+
+    return current;
+  }
+}
 ```
 
 ## Problem #3: Please solve this pattern using time complexity of O(n) and using the CORRECT PATTERN!
@@ -101,7 +182,6 @@ const maxWater = (arr) => {
 
   while (left < right) {
     let volume = Math.min(arr[left], arr[right]) * (right - left);
-    console.log(left, right, volume);
     max = Math.max(max, volume);
     if (arr[left] < arr[right]) {
       left++;
