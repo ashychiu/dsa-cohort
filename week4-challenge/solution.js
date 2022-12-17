@@ -15,4 +15,44 @@ const sortedByPostcode = (results) => {
   return results;
 };
 
-console.log(sortedByPostcode(results));
+// console.log(sortedByPostcode(results));
+
+const returnData = {
+  results: {
+    payload: [
+      {
+        profile: {
+          name: "Tony",
+          rank: 9,
+          favorites: [
+            {
+              title: "Spider-Man",
+              rating: 5,
+            },
+            {
+              rating: 9,
+            },
+          ],
+        },
+      },
+      {
+        profile: {
+          name: "John",
+          rank: 2,
+          favorites: [
+            {
+              title: "Hulk",
+              rating: 1,
+            },
+            {
+              title: "Top Gun",
+              rating: 8,
+            },
+          ],
+        },
+      },
+    ],
+  },
+};
+
+console.log("return", returnData.results.payload[0].profile.rank);

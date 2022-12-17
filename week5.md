@@ -53,11 +53,13 @@ const data = {
 **1. Merge sort (ascending order) by the rank**
 
 ```
+const arr = data.results.payload;
+
 const mergeSortByRank = (arr) => {
   if (arr.length <= 1) return arr;
   let mid = Math.floor(arr.length / 2);
-  let left = mergeSearchByRank(arr.slice(0, mid));
-  let right = mergeSearchByRank(arr.slice(mid));
+  let left = mergeSortByRank(arr.slice(0, mid));
+  let right = mergeSortByRank(arr.slice(mid));
   return merge(left, right);
 };
 
