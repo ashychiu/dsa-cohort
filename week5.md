@@ -4,7 +4,7 @@ Description: Congratulations! You were just hired to be a junior backend enginee
 He has asked to return the following data in two sorting options:
 
 1. Merge sort (ascending order) by the rank
-2. Merge sort (ascending order) by the ratings AND rank
+   ~~2. Merge sort (ascending order) by the ratings AND rank~~
 
 Please see below for the data returned from the database.
 
@@ -48,6 +48,8 @@ const data = {
   },
 };
 ```
+
+**1. Merge sort (ascending order) by the rank**
 
 ```
 const mergeSortByRank = (arr) => {
@@ -193,5 +195,3 @@ const maxWater = (arr) => {
   return max;
 };
 ```
-
-}
