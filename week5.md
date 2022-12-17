@@ -3,8 +3,9 @@
 Description: Congratulations! You were just hired to be a junior backend engineer at Hanawilo! As the first task at Hanawilo, your manager has asked you to implement a sorting algorithm using the Merge sort of the payloads coming back from the MongoDB database. The website currently is running a very slow sorting algorithm and it is driving away customers due to the slowness, therefore, as your first task, he has assigned you to rewrite the sorting algorithm for this payload returned from the MongoDB API fetch call.
 He has asked to return the following data in two sorting options:
 
-1. Merge sort (ascending order) by the rank  
-   ~~2. Merge sort (ascending order) by the ratings AND rank~~ (Solution is given and will be discussed in class)
+1. Merge sort (ascending order) by the rank
+
+~~2. Merge sort (ascending order) by the ratings AND rank~~ (Solution is given and will be discussed in class)
 
 Please see below for the data returned from the database.
 
@@ -168,12 +169,12 @@ Input: height = [1,1]
 Output: 1
 
 //Pseudo code  
-//set up two pointers, one at the start, one at the end
-//set up max = 0
-//calulate the volume between left & right
-//check if the volume is bigger than max, if yes, set max = volume
-//if the value of left pointer is smaller, move left pointer to the right (so to find bigger volume)
-//if not, move right pointer to the left (to find bigger vol)
+//set up two pointers, one at the start, one at the end  
+//set up max = 0  
+//calulate the volume between left & right  
+//check if the volume is bigger than max, if yes, set max = volume  
+//if the value of left pointer is smaller, move left pointer to the right (so to find bigger volume)  
+//if not, move right pointer to the left (to find bigger vol)  
 //return max
 
 ```
@@ -195,3 +196,6 @@ const maxWater = (arr) => {
   return max;
 };
 ```
+
+Time complexity: O(n)  
+Space complexity: Constant
