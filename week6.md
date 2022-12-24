@@ -9,7 +9,7 @@
 // return a value of the node that occurs the most often.  
 // PLEASE WRITE THIS FUNCTION IN THE SINGLY LINKED CLASS!!!
 
-**Pseudo code**
+**Pseudo code**  
 //loop through the singly linked list, starting from this.head  
 //record the value of each node using a map  
 //set highest frequency to 0  
